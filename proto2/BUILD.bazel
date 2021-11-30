@@ -1,0 +1,20 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@rules_proto_grpc//js:defs.bzl", "js_proto_library")
+
+proto_library(
+    name = "proto2_lib",
+    srcs = [
+        "proto2.proto",
+    ],
+    visibility = ["//visibility:public"],
+    deps = ["//proto1:proto1_lib"],
+)
+
+js_proto_library(
+    name = "proto2",
+    package_name = "@ex/proto2",
+    legacy_path = True,
+    output_mode = "NO_PREFIX",
+    protos = [":proto2_lib"],
+    visibility = ["//visibility:public"],
+)

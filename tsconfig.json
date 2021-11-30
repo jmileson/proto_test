@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "ES2017",
+            "dom"
+        ],
+        "types": [],
+        "baseUrl": ".",
+        "rootDirs": [
+            ".",
+            "bazel-out/k8-fastbuild/bin"
+        ],
+        "paths": {
+            "@ex/proto1/*": [
+                "./bazel-out/k8-fastbuild/bin/proto1/*",
+            ],
+            "@ex/proto2/*": [
+                "./bazel-out/k8-fastbuild/bin/proto2/*",
+            ]
+        }
+    }
+}

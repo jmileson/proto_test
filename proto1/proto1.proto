@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package proto1;
+
+option go_package = "github.com/proto1";
+
+message Foo {
+    string foo = 1;
+}

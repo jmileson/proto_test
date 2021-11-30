@@ -1,0 +1,25 @@
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+load("@npm//@bazel/typescript:index.bzl", "ts_project")
+
+ts_project(
+    name = "main",
+    tsconfig = "//:tsconfig.json",
+    validate = False,
+    deps = [
+        "//proto1",
+        "//proto2",
+        "@npm//@types/node",
+        "@npm//google-protobuf",
+        "@npm//tsutils",
+    ],
+)
+
+nodejs_binary(
+    name = "app",
+    data = [
+        ":main",
+        # "//proto1:proto1_proto",
+        # "//proto2:proto2_proto",
+    ],
+    entry_point = ":main.ts",
+)

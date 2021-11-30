@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package proto2;
+
+import "proto1/proto1.proto";
+
+message Bar {
+    proto1.Foo foo = 1;
+}
+
