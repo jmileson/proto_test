@@ -15,6 +15,6 @@ js_proto_library(
     package_name = "@ex/proto2",
     legacy_path = True,
     output_mode = "NO_PREFIX",
-    protos = [":proto2_lib"],
+    protos = [":proto2_lib", "//proto1:proto1_lib"],
     visibility = ["//visibility:public"],
 )
