@@ -18,8 +18,6 @@ nodejs_binary(
     name = "app",
     data = [
         ":main",
-        # "//proto1:proto1_proto",
-        # "//proto2:proto2_proto",
     ],
     entry_point = ":main.ts",
 )
